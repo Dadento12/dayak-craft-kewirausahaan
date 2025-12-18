@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../../component/navbar";
 import { products } from "../../api/product";
 import Upper from "../../component/upper";
-import ContactMe from "../../component/contactME";
+// import ContactMe from "../../component/contactME";
 
 export default function HomePage() {
   const navigate = useNavigate();
