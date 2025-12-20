@@ -6,7 +6,7 @@ export default function ContactMe(){
         <>
             <button><img src={WhatappsIcon} alt="wa-icon"/></button>
             <button><img src={InstagramIcon} alt="instagram-icon"/></button>
-            {console.log('Icon from https://icons8.com/icons')}
+            {console.log('Icon from https://icons8.com/icons')};
         </>
     );
 }

@@ -13,14 +13,17 @@ export default function Upper() {
         <p className="text-gray-700 text-lg">
           Temukan keindahan dan makna filosofis dalam setiap kerajinan tangan khas Suku Dayak yang dibuat dengan penuh ketelitian dan penghayatan.
         </p>
-        <div className="flex gap-4 justify-center md:justify-start mt-4">
+        <p>
+          Setiap produk yang tersedia di buat langsung dengan tangan oleh sang pengrajin sehingga kualitasi tidak perlu dipertanyakan.
+        </p>
+        {/* <div className="flex gap-4 justify-center md:justify-start mt-4">
           <Button className="bg-amber-400 hover:bg-amber-500 text-gray-900 px-6 py-2 rounded-xl">
             Cari Produk
           </Button>
           <Button className="bg-gray-300 hover:bg-gray-400 text-gray-800 px-6 py-2 rounded-xl">
             Tentang Kami
-          </Button>
-        </div>
+          </Button> */}
+      {/* </div> */}
       </div>
 
       {/* Kolom 2: elemen bulat dekoratif */}

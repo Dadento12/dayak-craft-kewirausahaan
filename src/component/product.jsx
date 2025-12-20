@@ -10,9 +10,9 @@ export default function Product({ id, namaProduk, harga, gambar }) {
       className="flex flex-col items-center bg-white rounded-2xl shadow-md p-4 hover:shadow-lg transition-all w-full max-w-sm mx-auto"
     >
       <img
-        src={gambar || "https://via.placeholder.com/300"}
+        src={gambar}
         alt={namaProduk}
-        className="rounded-xl w-full h-48 object-cover mb-3"
+        className="rounded-xl w-full h-full object-cover mb-3"
       />
       <p className="text-gray-900 font-semibold text-lg">{namaProduk}</p>
       <p className="text-gray-700 mb-3">{harga}</p>

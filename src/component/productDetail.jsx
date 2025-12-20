@@ -33,9 +33,9 @@ export default function ProductDetail() {
     >
       <div className="bg-white rounded-2xl shadow-lg p-6 max-w-md w-full text-center">
         <img
-          src={product.image || "https://via.placeholder.com/300"}
+          src={product.image}
           alt={product.name}
-          className="rounded-xl w-full h-64 object-cover mb-4"
+          className="rounded-xl w-full h-72 object-cover mb-4"
         />
         <h1 className="text-2xl font-bold text-gray-900 mb-2">
           {product.name}
