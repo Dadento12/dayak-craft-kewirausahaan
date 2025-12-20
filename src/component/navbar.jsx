@@ -2,7 +2,7 @@ export default function Navbar() {
   return (
     <nav className="w-full bg-amber-300 shadow-md p-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
       <h1 className="text-xl font-bold text-gray-800 text-center sm:text-left">
-        Craft Dayak
+        Dayak Craft
       </h1>
 
       <div className="flex w-full sm:w-auto justify-center sm:justify-end">
