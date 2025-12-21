@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { products } from "../api/product";
 import Upper from "../component/Upper";
 import HomeLayout from "../Layout/HomeLayout";
-import Product from "../component/Product";
+import Product from "../component/product";
 
 const ITEMS_PER_PAGE = 6;
 
