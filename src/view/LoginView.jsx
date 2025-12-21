@@ -21,7 +21,7 @@
       }
 
       // Validasi kredensial dummy
-      if (form.username === "@AdminDashboard" && form.password === "  ") {
+      if (form.username === "@AdminDashboard" && form.password === "12@Danka1299") {
         setLoading(true);
         setTimeout(() => {
           setLoading(false);
