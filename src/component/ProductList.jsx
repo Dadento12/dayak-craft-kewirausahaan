@@ -1,16 +1,16 @@
-import Product from "../../component/product";
-import Button from "../../component/ui/button";
-import { products } from "../../api/product";
-
-function handleBuy(productName) {
-  console.log(`Transaksi berhasil: ${productName}`);
-  alert(`Kamu membeli produk: ${productName}`);
-}
+import Product from "./Product";
+import Button from "./ui/button";
+import { products } from "../api/product";
 
 export default function ProductList() {
+  const handleBuy = (productName) => {
+    console.log(`Membeli produk: ${productName}`);
+    alert(`Anda membeli: ${productName}`);
+  };
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
-      {products.map((data) => (
+      {products.map((data ) => (
         <div
           key={data.id}
           className="flex flex-col items-center bg-white rounded-2xl shadow-md p-4 hover:shadow-lg transition-all duration-300"

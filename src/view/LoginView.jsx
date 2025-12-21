@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Button from "../../component/ui/button";
-import Input from "../../component/ui/input";
+import Button from "../component/ui/button";
+import Input from "../component/ui/input";
 
 async function handleLogin(username, password) {
   try {
