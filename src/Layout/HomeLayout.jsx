@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import Navbar from "../component/Navbar";
+import Navbar from "../component/navbar";
 import Footer from "../component/Footer";
 
 const HomeLayout = ({ children }) => {
