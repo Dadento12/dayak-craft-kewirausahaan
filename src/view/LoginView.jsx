@@ -39,7 +39,7 @@
           className="bg-white shadow-lg rounded-2xl p-8 w-80 flex flex-col gap-4 border border-amber-200"
         >
           <h2 className="text-center text-2xl font-bold text-gray-800">
-            Login Akun
+            Login Toko
           </h2>
 
           {error && (
