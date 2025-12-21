@@ -20,6 +20,7 @@ export const products = [
     description: "Gelang manik khas dayak yang dikombinasikan dengan tali tridatu dari Bali.",
     image: GalangLilis,
     contact: waUrl+'+6282293530322',
+    category : "Gelang",
   },
   {
     id: 3,
@@ -28,6 +29,7 @@ export const products = [
     description: "Kalung manik khas dayak yang dikombinasikan dengan lilis lamiang khas Dayak Kalimantan Tengah. Kalung ini dibuat langsung dengan tangan sehingga kualitasnya dapat dijamin",
     image: KalungManik,
     contact: waUrl+'+6285845652652',
+    category : "Kalung",
   },
   {
     id: 4,

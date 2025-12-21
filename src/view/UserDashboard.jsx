@@ -40,7 +40,7 @@ function ProductRow({ p, onEdit, onDelete }) {
           </div>
         </div>
       </td>
-      <td>{p.category || "Umum"}</td>
+      <td>{p.category || "Kerajinan Tangan"}</td>
       <td>{p.stock ?? "-"}</td>
       <td className="text-right">
         <div className="flex justify-end gap-2">
@@ -59,9 +59,9 @@ function ProductRow({ p, onEdit, onDelete }) {
 // Dashboard utama
 export default function UserDashboard() {
   const [stats, setStats] = useState({
-    orders: 124,
-    revenue: "Rp 23.400.000",
-    customers: 89,
+    orders: 0,
+    revenue: "Rp 0",
+    customers: 0,
   });
 
   const [products, setProducts] = useState(productsData); // pakai produk dari product.js
@@ -127,9 +127,9 @@ export default function UserDashboard() {
 
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-        <StatCard title="Pesanan" value={stats.orders} delta={8} icon={"🧾"} />
-        <StatCard title="Pendapatan" value={stats.revenue} delta={12} icon={"💰"} />
-        <StatCard title="Pelanggan" value={stats.customers} delta={-2} icon={"🧑‍🤝‍🧑"} />
+        <StatCard title="Pesanan" value={stats.orders} delta={0} icon={"🧾"} />
+        <StatCard title="Pendapatan" value={stats.revenue} delta={0} icon={"💰"} />
+        <StatCard title="Pelanggan" value={stats.customers} delta={0} icon={"🧑‍🤝‍🧑"} />
       </div>
 
       {/* Daftar Produk */}
@@ -157,7 +157,7 @@ export default function UserDashboard() {
       </div>
 
       <footer className="mt-6 text-xs text-muted text-center">
-        Dayak Craft Store — Admin panel (demo)
+        Dayak Craft Store — Admin panel
       </footer>
     </div>
   );
