@@ -23,12 +23,16 @@ const HomeLayout = ({ children }) => {
         />
         <meta
           property="og:image"
-          content="https://yourdomain.com/images/preview.jpg"
+          content="https://dayak-craft-kewirausahaan-xbas.vercel.app/"
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://yourdomain.com/" />
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel="canonical" href="https://yourdomain.com/" />
+        <meta name="keyword" content="Produk kerajinan dayak ngaju asli"/>
+        <meta name="keyword" content="Produk Kerajinan"/>
+        <meta name="keyword" content="Kerajinan tangan"/>
+        <meta name="keyword" content="Khas dayak"/>
+        <link rel="canonical" href="https://dayak-craft-kewirausahaan-xbas.vercel.app/" />
       </Helmet>
 
       <Navbar />
