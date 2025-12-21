@@ -1,6 +1,7 @@
 import gelangManik from '../assets/product/produk1.jpg'
 import GalangLilis from '../assets/product/produk2.jpg'
 import KalungManik from '../assets/product/Yaya_Produk.jpg'
+import Giring_Giring from '../assets/product/Produk_Rio_1.jpg'
 
 const waUrl = "https://wa.me/"
 export const products = [
@@ -27,6 +28,14 @@ export const products = [
     description: "Kalung manik khas dayak yang dikombinasikan dengan lilis lamiang khas Dayak Kalimantan Tengah. Kalung ini dibuat langsung dengan tangan sehingga kualitasnya dapat dijamin",
     image: KalungManik,
     contact: waUrl+'+6285845652652',
+  },
+  {
+    id: 4,
+    name: "Giring-giring Tari home made",
+    price: "Rp 30.000",
+    description: "Giring-giring tari buatan tangan yang sangat kuat",
+    image: Giring_Giring,
+    contact: waUrl+'+6281545631982',
   },
 ];
 
