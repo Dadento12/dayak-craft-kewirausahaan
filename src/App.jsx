@@ -1,4 +1,3 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./view/HomeView";
 import ProductDetail from './component/ProductList'
 import Login from './view/LoginView'
