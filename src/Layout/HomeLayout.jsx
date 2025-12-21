@@ -3,6 +3,7 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 
 const HomeLayout = ({ children }) => {
+  console.log('App loades')
   return (
     <div className="flex flex-col min-h-screen bg-gray-100" data-theme="light">
       <Helmet>

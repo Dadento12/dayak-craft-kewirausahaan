@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { products } from "../api/product";
-import Upper from "../component/upper";
+import Upper from "../component/Upper";
 import HomeLayout from "../Layout/HomeLayout";
 import Product from "../component/Product";
 

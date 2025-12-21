@@ -1,18 +1,17 @@
+// src/main.jsx
 import React from "react";
-import ReactDOM from "react-dom/client"; // <--- penting banget
+import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-import App from "./App.jsx";
-import "./index.css";
 import { HelmetProvider } from "react-helmet-async";
+import App from "./App";
+import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <div className="overflow-hidden">
-    <React.StrictMode>
-      <HelmetProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </HelmetProvider>
-    </React.StrictMode>
-  </div>
+  <React.StrictMode>
+    <HelmetProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </HelmetProvider>
+  </React.StrictMode>
 );
