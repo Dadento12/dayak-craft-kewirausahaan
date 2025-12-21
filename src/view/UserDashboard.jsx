@@ -1,12 +1,7 @@
-// src/view/UserDashboard.jsx
 import React, { useEffect, useState } from "react";
+import { products as productsData } from "../api/product"; // import produk dummy
 
-/*
-  Dashboard sederhana berbasis DaisyUI/Tailwind.
-  - Pastikan Tailwind + DaisyUI sudah terpasang dan terkonfigurasi.
-  - Komponen ini menggunakan dummy state; ganti dengan fetch ke API jika ada.
-*/
-
+// Komponen kartu statistik
 function StatCard({ title, value, delta, icon }) {
   return (
     <div className="card bg-base-100 shadow-md p-4">
@@ -28,6 +23,7 @@ function StatCard({ title, value, delta, icon }) {
   );
 }
 
+// Baris produk
 function ProductRow({ p, onEdit, onDelete }) {
   return (
     <tr className="hover">
@@ -60,50 +56,28 @@ function ProductRow({ p, onEdit, onDelete }) {
   );
 }
 
+// Dashboard utama
 export default function UserDashboard() {
-  // Dummy data; nanti ganti fetch ke API
   const [stats, setStats] = useState({
     orders: 124,
     revenue: "Rp 23.400.000",
     customers: 89,
   });
 
-  const [products, setProducts] = useState([
-    {
-      id: 1,
-      name: "Gelang Manik Kalimantan",
-      price: "Rp 175.000",
-      image: "/images/gelang1.jpg",
-      category: "Gelang",
-      stock: 12,
-    },
-    {
-      id: 2,
-      name: "Anyaman Dayak Kecil",
-      price: "Rp 95.000",
-      image: "/images/anyam1.jpg",
-      category: "Anyaman",
-      stock: 5,
-    },
-  ]);
+  const [products, setProducts] = useState(productsData); // pakai produk dari product.js
 
   useEffect(() => {
-    // placeholder: di sini bisa fetch('/api/admin/summary') -> setStats(...)
-    // dan fetch produk -> setProducts(...)
+    // Placeholder fetch API nanti
+    // fetch('/api/admin/summary').then(...setStats)
   }, []);
 
-  const handleEdit = (p) => {
-    // contoh: redirect ke page edit atau open modal
-    alert(`Edit produk: ${p.name}`);
-  };
-
+  const handleEdit = (p) => alert(`Edit produk: ${p.name}`);
   const handleDelete = (p) => {
     if (!confirm(`Hapus produk "${p.name}"? Tindakan ini tidak bisa dibatalkan.`)) return;
     setProducts((prev) => prev.filter((x) => x.id !== p.id));
   };
 
   const handleAddProduct = () => {
-    // demo quick add
     const id = Date.now();
     setProducts((prev) => [
       {
@@ -118,8 +92,24 @@ export default function UserDashboard() {
     ]);
   };
 
+  const handleExportCSV = () => {
+    let csvContent = "data:text/csv;charset=utf-8,";
+    csvContent += "Nama Produk,Harga,Kategori,Stok\n";
+    products.forEach((p) => {
+      csvContent += `${p.name},${p.price},${p.category ?? "Umum"},${p.stock ?? 0}\n`;
+    });
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", "produk_dayakcraft.csv");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
-    <div className="p-6">
+    <div className="p-6 min-h-screen bg-amber-50">
+      {/* Header */}
       <div className="mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
           <h2 className="text-2xl font-bold">Admin Dashboard</h2>
@@ -129,16 +119,20 @@ export default function UserDashboard() {
           <button className="btn btn-primary" onClick={handleAddProduct}>
             Tambah Produk
           </button>
-          <button className="btn btn-ghost">Export CSV</button>
+          <button className="btn btn-ghost" onClick={handleExportCSV}>
+            Export CSV
+          </button>
         </div>
       </div>
 
+      {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
         <StatCard title="Pesanan" value={stats.orders} delta={8} icon={"🧾"} />
         <StatCard title="Pendapatan" value={stats.revenue} delta={12} icon={"💰"} />
         <StatCard title="Pelanggan" value={stats.customers} delta={-2} icon={"🧑‍🤝‍🧑"} />
       </div>
 
+      {/* Daftar Produk */}
       <div className="card bg-base-100 shadow">
         <div className="card-body">
           <h3 className="card-title">Daftar Produk</h3>
@@ -162,8 +156,8 @@ export default function UserDashboard() {
         </div>
       </div>
 
-      <footer className="mt-6 text-xs text-muted">
-        <div>Dayak Craft Store — Admin panel (demo)</div>
+      <footer className="mt-6 text-xs text-muted text-center">
+        Dayak Craft Store — Admin panel (demo)
       </footer>
     </div>
   );
