@@ -33,7 +33,7 @@ export const products = [
   },
   {
     id: 4,
-    name: "Giring-giring Tari home made",
+    name: "Giring-giring Tari Buatan Tangan",
     price: "Rp 30.000",
     description: "Giring-giring tari buatan tangan yang sangat kuat",
     image: Giring_Giring,
